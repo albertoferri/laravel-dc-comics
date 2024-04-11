@@ -5,7 +5,6 @@
 
         <h1 class="text-center display-1 fw-bold mb-5">COMICS</h1>
 
-
         <div class="row row-gap-4">
             @foreach($comics as $comic)
                 <div class="col-sm-4">
@@ -17,7 +16,7 @@
                             <ul>
                                 <li>Price: {{$comic->price}}</li>
                                 <li>Series: {{$comic->series}}</li>
-                                <li>Sale Date: {{$comic->sale_date}}</li>
+                                <li>Data di uscita: {{$comic->sale_date}}</li>
                                 <li>Type: {{$comic->type}}</li>
                                 <li>Artists: {{$comic->artists}}</li>
                                 <li>Writers: {{$comic->writers}}</li>
@@ -28,7 +27,5 @@
             @endforeach
         </div>
         
-        
-
     </div>
 @endsection
