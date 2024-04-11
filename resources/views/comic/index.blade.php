@@ -21,6 +21,7 @@
                                 <li>Artists: {{$comic->artists}}</li>
                                 <li>Writers: {{$comic->writers}}</li>
                             </ul>
+                            <a href="{{route('comics.show', $comic->id)}}" class="btn btn-secondary fw-bold">VISUALIZZA</a>
                         </div>
                     </div>
                 </div>
