@@ -18,6 +18,7 @@
                             <li>Artists: {{$comic->artists}}</li>
                             <li>Writers: {{$comic->writers}}</li>
                         </ul>
+                        <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-warning fw-bold">MODIFICA</a>
                     </div>
                 </div>
             </div>

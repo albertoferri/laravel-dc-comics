@@ -7,8 +7,11 @@
 
     {{-- @dump($comic) --}}
 
-    <form action="{{route('comics.store')}}" method="POST">
+    <form action="{{route('comics.update', $comic->id)}}" method="POST">
         @csrf
+
+        {{-- il file edit prevede solo il metodo PUT e per passarlo devo scrivere questo --}}
+        @method('PUT')
 
         <div class="mb-3">
           <label for="title" class="form-label">Titolo</label>
@@ -55,7 +58,7 @@
             <input type="text" class="form-control" id="writers" name="writers" value="{{$comic->writers}}">
         </div>
 
-        <button type="submit" class="btn btn-primary">Salva</button>
+        <button type="submit" class="btn btn-warning fw-bold">Salva</button>
 
     </form>
 </div>
