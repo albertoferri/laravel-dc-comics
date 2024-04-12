@@ -12,8 +12,7 @@
                         <img class="card-img-top" src="{{$comic->thumb}}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{$comic->title}}</h5>
-                            <p class="card-text">{{$comic->description}}</p>
-                            <ul>
+                            <ul class="card-text">
                                 <li>Price: {{$comic->price}}</li>
                                 <li>Series: {{$comic->series}}</li>
                                 <li>Data di uscita: {{$comic->sale_date}}</li>
