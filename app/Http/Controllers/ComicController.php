@@ -31,7 +31,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        // creiamo una nuovo pasta
+        // creiamo un nuovo fumetto
         $newComic = new Comic();
 
         $newComic->title = $request->title;
