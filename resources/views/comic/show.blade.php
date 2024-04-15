@@ -50,7 +50,7 @@
             </div>
 
             <div class="modal-body">
-              Sei sicuro che vuoi eliminare il fumetto "{{$comic->title}}?"
+              Sei sicuro che vuoi eliminare il fumetto "{{$comic->title}}"?
             </div>
 
 

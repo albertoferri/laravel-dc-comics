@@ -11,7 +11,7 @@
 
         <div class="row row-gap-4">
             @foreach($comics as $comic)
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="card h-100 hover-comic border-3">
                         <a href="{{route('comics.show', $comic->id)}}">
                             <img class="card-img-top" src="{{$comic->thumb}}" alt="Card image cap">
