@@ -1,1 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+
+.hover-comic:hover {
+    border-color: $success !important; 
+}

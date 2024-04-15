@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="container py-5">
-    <h1 class="text-center fw-bold">Modifica il tuo fumetto</h1>
+    <nav class="d-flex justify-content-between align-items-center pb-5">
+        <h1 class="fw-bold text-uppercase ">Modifica il tuo fumetto</h1>
+    
+        <a href="{{route('comics.index')}}" class="btn btn-primary h-50 fw-bold">HOME</a>
+    </nav>
 
     {{-- @dump($comic) --}}
 
@@ -20,7 +24,7 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea type="text" class="form-control" id="description" rows="4" name="description">{{$comic->description}}</textarea>
+            <textarea type="text" class="form-control" id="description" rows="6" name="description">{{$comic->description}}</textarea>
         </div>
 
         <div class="mb-3">

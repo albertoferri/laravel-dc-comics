@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="container py-5">
-    <h1>Aggiungi un fumetto</h1>
+    <nav class="d-flex justify-content-between align-items-center pb-5">
+        <h1 class="fw-bold text-uppercase ">Aggiungi un fumetto</h1>
+    
+        <a href="{{route('comics.index')}}" class="btn btn-primary h-50 fw-bold">HOME</a>
+    </nav>
 
     {{-- nel form scriviamo il nome della rotta come action --}}
     {{-- indichiamo anche il metodo POST per la richiesta --}}
@@ -55,7 +59,7 @@
             <input type="text" class="form-control" id="writers" name="writers">
         </div>
 
-        <button type="submit" class="btn btn-primary">Salva</button>
+        <button type="submit" class="btn btn-primary">Salva modifiche</button>
 
     </form>
 </div>
