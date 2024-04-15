@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comic;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 
@@ -31,6 +32,10 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        // per far si che vengano validati prima di essere inseriti nel database dobbiamo scrivere questa stringa
+        $this->validation($request->all());
+
         // creiamo un nuovo fumetto
         $newComic = new Comic();
 
@@ -71,6 +76,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
+        // per far si che vengano validati prima di essere modificati nel database dobbiamo scrivere questa stringa
+        $this->validation($request->all());
+
         // codice per modificare il record (elemento)
         $comic->title = $request->title;
         $comic->description = $request->description;
@@ -93,5 +102,37 @@ class ComicController extends Controller
     {
         $comic->delete();
         return redirect()->route("comics.index");
+    }
+
+
+    
+    // creo una funzione privata per i controlli di validazione e la comunicazione del messaggio di errore
+    // VA RICHIAMATO NELLO STORE, PRIMA DI FARE TUTTO
+    private function validation($data) {
+    
+        $validator = Validator::make($data, [
+            'title' => 'required|max:100',
+            'description' => 'nullable',
+            'thumb' => 'nullable',
+            'price' => 'required|max:10',
+            'series' => 'required|max:100',
+            'sale_date' => 'required|date',
+            'type' => 'required|max:50',
+            'artists' => 'required',
+            'writers' => 'required'
+        ], [
+            'title.required' => 'Il titolo deve essere inserito',
+            'title.max' => "Il titolo deve avere massimo :max caratteri",
+            'price.required' => "Il prezzo deve essere inserito",
+            'price.max' => "Inserisci un prezzo di massimo :max caratteri",
+            'series.required' => "La serie deve essere inserita",
+            'series.max' => "La serie deve avere massimo :max caratteri",
+            'sale_date.required' => "La data di vendita deve essere inserita",
+            'sale_date.date' => "Inserisci una data valida",
+            'type.required' => 'Il tipo deve essere inserito',
+            'type.max' => "Il tipo deve avere massimo :max caratteri",
+            'artists.required' => "Gli artisti devono essere inseriti",
+            'writers.required' => "Gli scrittori devono essere inseriti",
+        ])->validate();
     }
 }

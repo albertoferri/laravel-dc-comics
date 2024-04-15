@@ -58,6 +58,17 @@
             <input type="text" class="form-control" id="writers" name="writers" value="{{$comic->writers}}">
         </div>
 
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <h5>ERRORI:</h5>
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
         <button type="submit" class="btn btn-warning fw-bold">Salva</button>
 
     </form>
