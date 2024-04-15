@@ -107,7 +107,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-warning fw-bold">Salva</button>
+        <button type="submit" class="btn btn-warning fw-bold text-uppercase">Salva</button>
 
     </form>
 </div>

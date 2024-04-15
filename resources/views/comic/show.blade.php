@@ -56,12 +56,12 @@
 
             <div class="modal-footer">
 
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <button type="button" class="btn btn-light text-uppercase fw-bold" data-bs-dismiss="modal">Annulla</button>
                 <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
                     @csrf
                     @method("DELETE")
                     
-                    <button class="btn btn-danger">Elimina</button>
+                    <button class="btn btn-danger text-uppercase fw-bold">Elimina</button>
                 </form>
 
             </div>
